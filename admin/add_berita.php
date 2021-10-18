@@ -41,7 +41,7 @@
 			$filetmpname = $_FILES['gambar']['tmp_name'];
 
 			// FOLDER DIMANA GAMBAR AKAN DI SIMPAN
-			$folder = 'image/';
+			$folder = 'im/';
 			// GAMBAR DI SIMPAN KE DALAM FOLDER
 			move_uploaded_file($filetmpname, $folder . $filename);
 
