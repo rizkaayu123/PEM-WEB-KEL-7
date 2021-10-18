@@ -71,6 +71,45 @@ $result = mysqli_query($mysqli, "SELECT * FROM berita ORDER BY id DESC");
 			?>
 		</table>
 	</center>
+
+
+	<center>
+	
+		 <a href="add_campaign.html" class="btn btn-primary" role="button">Tambah Data Campaign</a>
+
+
+		<table width='80%' border=0>
+
+			<tr bgcolor='#CCCCCC'>
+				<td>Judul</td>
+				<td>Deskripsi</td>
+				<td>Nama Penerima</td>
+				<td>Jumlah Donatur</td>
+				<td>Kebutuhan Dana</td>
+				<td>Terdanai</td>
+				<td>Kekurangan</td>
+				<td>Gambar</td>
+				<td collapse='2'>Update</td>
+			</tr>
+			<?php
+
+			while ($res = mysqli_fetch_array($result)) {
+				echo "<tr>";
+				echo "<td>" . $res['judul'] . "</td>";
+				echo "<td>" . $res['deskripsi'] . "</td>";
+				echo "<td>" . $res['nama_penerima'] . "</td>";
+				echo "<td>" . $res['jumlahdonatur'] . "</td>";
+				echo "<td>" . $res['kebutuhan_dana'] . "</td>";
+				echo "<td>" . $res['terdanai'] . "</td>";
+				echo "<td>" . $res['kekurangan'] . "</td>";
+				echo "<td><img width='80' src='image/" . $res['gambar'] . "'</td>";
+				echo "<td><a href=\"editberita.php?id=$res[id]\" class=\"btn btn-warning\" role=\"button\">Edit</a> 
+				<a href=\"deleteberita.php?id=$res[id]\" class=\"btn btn-danger\" role=\"button\" onClick=\"return confirm('Kamu yakin untuk delete ini?')\">Delete</a>
+				</td>";
+			}
+			?>
+		</table>
+	</center>
 </body>
 
 </html>
