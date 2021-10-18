@@ -11,7 +11,7 @@ $dataImage = mysqli_fetch_assoc($data);
 $oldImage = $dataImage['gambar'];
 
 // DELETE GAMBAR LAMA
-$link = "image/" . $oldImage;
+$link = "im/" . $oldImage;
 unlink($link);
 
 // DELETE DATA DARI TABLE
