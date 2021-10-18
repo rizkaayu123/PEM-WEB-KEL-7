@@ -20,18 +20,34 @@
 		$filename = $_FILES['gambar']['name'];
 
 		// CEK DATA TIDAK BOLEH KOSONG
-		if (empty($judul) || empty($text) || empty($date) || empty($filename)) {
+		if (empty($judul) || empty($deskripsi) || empty($nama_penerima) || empty($jumlahdonatur) || empty($kebutuhan_dana) || empty($terdanai) || empty($kekurangan) || empty($filename)) {
 
 			if (empty($judul)) {
 				echo "<font color='red'>Kolom judul tidak boleh kosong.</font><br/>";
 			}
 
-			if (empty($text)) {
-				echo "<font color='red'>Kolom text tidak boleh kosong.</font><br/>";
+			if (empty($deskripsi)) {
+				echo "<font color='red'>Kolom deskripsi tidak boleh kosong.</font><br/>";
 			}
 
-			if (empty($date)) {
-				echo "<font color='red'>Kolom date tidak boleh kosong.</font><br/>";
+			if (empty($nama_penerima)) {
+				echo "<font color='red'>Kolom nama_penerima tidak boleh kosong.</font><br/>";
+			}
+
+			if (empty($jumlahdonatur)) {
+				echo "<font color='red'>Kolom jumlahdonatur tidak boleh kosong.</font><br/>";
+			}
+
+			if (empty($kebutuhan_dana)) {
+				echo "<font color='red'>Kolom kebutuhan_dana tidak boleh kosong.</font><br/>";
+			}
+
+			if (empty($terdanai)) {
+				echo "<font color='red'>Kolom terdanai tidak boleh kosong.</font><br/>";
+			}
+			
+			if (empty($kekurangan)) {
+				echo "<font color='red'>Kolom kekurangan tidak boleh kosong.</font><br/>";
 			}
 
 			if (empty($filename)) {
