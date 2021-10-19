@@ -45,7 +45,7 @@
 			if (empty($terdanai)) {
 				echo "<font color='red'>Kolom terdanai tidak boleh kosong.</font><br/>";
 			}
-			
+
 			if (empty($kekurangan)) {
 				echo "<font color='red'>Kolom kekurangan tidak boleh kosong.</font><br/>";
 			}
@@ -70,7 +70,7 @@
 
 			// MENAMPILKAN PESAN BERHASIL
 			echo "<font color='green'>Data Berhasil ditambahkan.";
-			echo "<br/><a href='indexadmin.php'>Lihat Hasilnya</a>";
+			echo "<br/><a href='tampil_campaign.php'>Lihat Hasilnya</a>";
 		}
 	}
 	?>

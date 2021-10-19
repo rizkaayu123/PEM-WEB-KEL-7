@@ -53,7 +53,7 @@ if (isset($_POST['update'])) {
 		$result = mysqli_query($mysqli, "UPDATE berita SET  judul='$judul',text='$text',date='$date' WHERE id=$id");
 
 		// REDIRECT KE HALAMAN INDEX.PHP
-		header("Location: indexuser.php");
+		header("Location: indexadmin.php");
 	}
 }
 ?>
@@ -79,7 +79,7 @@ while ($res = mysqli_fetch_array($result)) {
 
 <body>
 	<center>
-		<a href="index.php">Home</a>
+		<a href="indexadmin.php">Home</a>
 		<br /><br />
 
 		<form name="form1" method="post" action="edit.php" enctype="multipart/form-data">
