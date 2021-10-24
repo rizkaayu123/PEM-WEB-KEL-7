@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Okt 2021 pada 15.22
+-- Waktu pembuatan: 24 Okt 2021 pada 16.11
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.10
 
@@ -80,16 +80,49 @@ CREATE TABLE `donasi_sekarang` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Struktur dari tabel `level`
 --
 
-CREATE TABLE `login` (
-  `id` int(10) NOT NULL,
-  `name` text NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(10) NOT NULL
+CREATE TABLE `level` (
+  `id_level` int(11) NOT NULL,
+  `nama_level` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `level`
+--
+
+INSERT INTO `level` (`id_level`, `nama_level`) VALUES
+(1, 'admin'),
+(2, 'donatur');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id_log` int(10) NOT NULL,
+  `nama_lengkap` varchar(100) NOT NULL,
+  `alamat` varchar(1000) NOT NULL,
+  `jenis_kelamin` varchar(100) NOT NULL,
+  `tempat_lahir` varchar(100) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `no_tlpn` int(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `level` int(11) NOT NULL,
+  `kode` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id_log`, `nama_lengkap`, `alamat`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `no_tlpn`, `email`, `username`, `password`, `level`, `kode`) VALUES
+(1, 'rizka', 'kupuk', 'aaaaaaaaaaaaaaaaaaa', 'aaaaaaaaa', '2021-10-19', 8217, 'zzzzzzzzzzzz', 'ayu', '123', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -129,10 +162,17 @@ ALTER TABLE `donasi_sekarang`
   ADD PRIMARY KEY (`id_donasi`);
 
 --
--- Indeks untuk tabel `login`
+-- Indeks untuk tabel `level`
 --
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `level`
+  ADD PRIMARY KEY (`id_level`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_log`),
+  ADD KEY `level` (`level`);
 
 --
 -- Indeks untuk tabel `yayasan`
@@ -163,16 +203,32 @@ ALTER TABLE `donasi_sekarang`
   MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT untuk tabel `level`
 --
-ALTER TABLE `login`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `level`
+  MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_log` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `yayasan`
 --
 ALTER TABLE `yayasan`
   MODIFY `id_yas` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`level`) REFERENCES `level` (`id_level`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
