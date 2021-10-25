@@ -275,7 +275,6 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="active"><a href="#"><i class="fa fa-file-text"></i> <span>Laporan</span></a></li>
-        <li class="active"><a href="#"><i class="fa fa-file-text"></i> <span>Berita</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-reorder"></i> <span>Data Sistem</span>
             <span class="pull-right-container">
@@ -284,6 +283,7 @@ desired effect
           </a>
           <ul class="treeview-menu">
             <li><a class="btn-nav" data-url="data-user.php" href="#">Data User</a></li>
+            <li><a class="btn-nav" data-url="data-berita.php" href="#">Data Berita</a></li>
             <li><a class= "btn-nav" data-url="data-kelompok.php" href="#">Data Donatur</a></li>
             <li><a class="btn-nav" data-url="data-tempat.php" href="#">Data Campaing</a></li>
           </ul>
