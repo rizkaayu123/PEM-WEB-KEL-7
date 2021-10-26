@@ -14,7 +14,7 @@ if (!empty($act)) {
 		if (!empty($pass1)&&!empty($pass1)) {
 			if ($pass1==$pass2) {
 				$password=$pass1;
-				$q=$odb->ins("tb_user(nama_depan, nama_belakang, username, password, id_level)","'$nama_depan','$nama_belakang','$username','$password','$level'");
+				$q=$odb->ins("user(nama_lengkap, alamat, jenis_kelamin, tempat_lahir, tanggal_lahir, no_tlpn, email, username, password, level)", "'$nama_lengkap','$alamat','$jenis_kelamin','$tempat_lahir','$tanggal_lahir','$no_tlpn', '$email','$username','$password','$level'");
 				$ff->alert("data berhasil disimpan !!");
 			}
 		}else{
@@ -52,7 +52,7 @@ if (!empty($act)) {
 					$password=$pass1;
 					// $ff->alert($id);
 					// $ff->alert($nama_belakang);
-					$q=$odb->up("tb_user","nama_depan='$nama_depan',nama_belakang='$nama_belakang',username='$username',password='$password',id_level='$id_level' where id_user='$id'");
+					$q=$odb->up("user","nama_lengkap='$nama_lengkap',alamat='$alamat',jenis_kelamin='$jenis_kelamin',tempat_lahir='$tempat_lahir',tanggal_lahir='$tanggal_lahir',no_tlpn='$no_tlpn',email='$email',username='$username',password='$password',level='$id_level' where id_log='$id'");
 					$ff->alert("data berhasil disimpan !!");
 				}
 			}else{
@@ -67,7 +67,7 @@ if (!empty($act)) {
 		$id=$ff->get("id");
 		if (!empty($id)) {
 
-			$q=$odb->del("tb_user where id_user='$id'");
+			$q=$odb->del("user where id_log='$id'");
 			$ff->alert("data berhasil dihapus !!");
 			$ff->redirect("admin.php");
 		}

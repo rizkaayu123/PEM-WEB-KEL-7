@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>DONASI SEKARANG</title>
+    <!-- Load file CSS Bootstrap offline -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ 
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+    <h2>Tambah Data Donasi Sekarang</h2>
+    <a href="tampil_donasisekarang.php">Home</a>
+    <br /><br />
+
+    <form
+      action="add_donasisekarang.php"
+      method="post"
+      name="form1"
+      enctype="multipart/form-data"
+    >
+    
+    <div class="form-group">
+      <label>Nama Donatur:</label>
+      <input type="text" name="nama_donatur" class="form-control" placeholder="Masukan Nama Donatur" required />
+
+  </div>
+  <div class="form-group">
+      <label>Alamat:</label>
+      <textarea type="text" name="alamat" class="form-control" rows="3" placeholder="Masukan Alamat" required></textarea>
+
+   </div>
+  <div class="form-group">
+      <label>Email:</label>
+      <input type="text" name="email" class="form-control" placeholder="Masukan Email" required />
+
+  </div>
+    
+  <div class="form-group">
+      <label>Nomor Telepon:</label>
+      <input type="text" name="notelpn" class="form-control" placeholder="Masukan No Telepon" required />
+
+  </div>
+  <div class="form-group">
+      <label>Tanggal:</label>
+      <input type="text" name="tanggal" class="form-control" placeholder="Masukan Tanggal" required />
+
+  </div>
+
+    <div class="form-group">
+      <label>Yayasan:</label>
+      <input type="text" name="yayasan" class="form-control" placeholder="Masukan yayasan" required />
+
+  </div>
+
+    <div class="form-group">
+      <label>Kebutuhan:</label>
+      <input type="text" name="kebutuhan" class="form-control" placeholder="Masukan Kebutuhan" required />
+
+  </div>
+
+<div class="form-group">
+      <label>Jumlah Donasi:</label>
+      <input type="text" name="jumlahdonasi" class="form-control" placeholder="Masukan Jumlah Donasi" required />
+
+  </div>
+
+  <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
+
+
+
+    </form>
+  </body>
+</html>

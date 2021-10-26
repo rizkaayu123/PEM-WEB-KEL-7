@@ -7,16 +7,36 @@ $r=$q->fetch();
 ?>
 
 <form action="sv-user.php?act=up" method="post">
-	<input type="hidden" name="id" value="<?=$r['id_user']?>">
-	<div class="row">
-		<div class="form-group col-md-6">
-			<label>Nama Depan</label>
-			<input type="text" name="nama_depan" value="<?=$r['nama_depan']?>" class="form-control" placeholder="Nama Depan">
+	<input type="hidden" name="id" value="<?=$r['id_log']?>">
+	<div class="form-group">
+		<label>Nama Lengkap</label>
+		<input type="text" name="nama_lengkap" value="<?=$r['nama_lengkap']?>" class="form-control" placeholder="Nama Lengkap">
 		</div>
-		<div class="form-group col-md-6">
-			<label>Nama Belakang</label>
-			<input type="text" name="nama_belakang" value="<?=$r['nama_belakang']?>" class="form-control" placeholder="Nama Belakang">
-		</div>
+	<div class="form-group">
+		<label>Alamat</label>
+		<input type="text" name="alamat" value="<?=$r['alamat']?>" class="form-control" placeholder="Alamat">
+	</div>
+	<div class="form-group">
+		<label>Jenis Kelamin</label>
+		<br>
+		<input type="radio" name="jenis_kelamin" value="laki-laki" <?php if($r['jenis_kelamin']){echo 'checked';}?> > laki-laki <br>
+		<input type="radio" name="jenis_kelamin" value="perempuan"<?php if($r['jenis_kelamin']){echo 'checked';}?>> perempuan <br>
+	</div>
+	<div class="form-group">
+		<label>Tempat Lahir</label>
+		<input type="text" name="tempat_lahir" value="<?=$r['tempat_lahir']?>" class="form-control" placeholder="Tempat Lahir">
+	</div>
+	<div class="form-group">
+		<label>Tanggal Lahir</label>
+		<input type="text" name="tanggal_lahir" value="<?=$r['tanggal_lahir']?>" class="form-control" placeholder="Tanggal Lahir">
+	</div>
+	<div class="form-group">
+		<label>No Telepon</label>
+		<input type="text" name="no_tlpn" value="<?=$r['no_tlpn']?>" class="form-control" placeholder="No Telepon">
+	</div>
+	<div class="form-group">
+		<label>Email</label>
+		<input type="text" name="email" value="<?=$r['email']?>" class="form-control" placeholder="Email">
 	</div>
 	<div class="form-group">
 		<label>Username</label>
@@ -35,7 +55,7 @@ $r=$q->fetch();
 		<select name="id_level" class="form-control select2" style="width: 100%;">
 			<option value="">---Pilih---</option>
 			<?php 
-			$q1=$odb->select("tb_level");
+			$q1=$odb->select("level");
 			while ($r1=$q1->fetch()) {
 				if ($r1['id_level']===$r['id_level']) {
 					?>

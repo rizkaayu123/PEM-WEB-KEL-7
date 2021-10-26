@@ -54,7 +54,7 @@ include_once '../lib/class-ff.php';
                 <td><?=$r['alamat']?></td>
                 <td><?=$r['jenis_kelamin']?></td>
                 <td><?=$r['tempat_lahir']?></td>
-                <td><?php $ff->hitung_umur($r['tanggal_lahir'], 'tahun')?></td>
+                <td><?=$r['tanggal_lahir']?></td>
                 <td><?=$r['no_tlpn']?></td>
                 <td><?=$r['email']?></td>
                 <td><?=$r['username']?></td>
