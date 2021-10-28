@@ -15,26 +15,37 @@
 
 			</div>
 			<div class="modal-body bg-light">
-				<form action="sv-berita.php" method="post" enctype="multipart/form-data">
+				<form action="sv-yayasan.php?act=ins" method="post">
 					
 					<div class="form-group">
-						<label>Judul Berita :</label>
-						<input type="text" name="judul" class="form-control" placeholder="Masukan Judul Berita">
+						<label>Nama Yayasan :</label>
+						<input type="text" name="nama_yayasan" class="form-control" placeholder="Masukan Nama Yayasan">
 					</div>
 					
 					<div class="form-group">
 						<label>Deskripsi :</label>
-						<input type="text" name="text" class="form-control" placeholder="Masukan Dekripsi Berita" required="">
+						<input type="text" name="text" class="form-control" placeholder="Masukan Dekripsi" required="">
 					</div>
-					<div class="form-group">
-						<label>Tanggal :</label>
-						<input type="date" name="date" id="date" class="form-control" required="">
+
+                    <div class="form-group">
+						<label>Alamat :</label>
+						<input type="text" name="alamat" class="form-control" placeholder="Masukan Alamat Yayasan" required="">
 					</div>
-					<div class="form-group">
-				      <label>Gambar:</label>
-				      <input type="file" name="foto" required/>
-				      <p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
-				  </div>
+
+                    <div class="form-group">
+						<label>No Telepon :</label>
+						<input type="text" name="notlp" class="form-control" placeholder="Masukan No Telepon Yayasan" required="">
+					</div>
+
+                    <div class="form-group">
+						<label>Email :</label>
+						<input type="text" name="email" class="form-control" placeholder="Masukan Email yayasan " required="">
+					</div>
+					
+                    <div class="form-group">
+						<label>Kebutuhan :</label>
+						<input type="text" name="kebutuhan" class="form-control" placeholder="Masukan Kebutuhan Yayasan" required="">
+					</div>
 
 					<div class="form-group float-right">
 						<button type="submit" name="submit" class="btn btn-success text-light" id="submit"><i class="fa fa-save fa-lg"></i></button>

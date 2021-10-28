@@ -2,6 +2,7 @@
 session_start();
 include_once '../lib/class-db.php';
 include_once '../lib/class-ff.php';
+include_once '../lib/class-fungsi.php';
 
 $act=$ff->get("act");
 if (!empty($act)) {
@@ -11,7 +12,9 @@ if (!empty($act)) {
 				// if (empty($as)) {
 		$post=$odb->sant(INPUT_POST);
 		extract($post);
-		$q=$odb->ins("berita(desa, kecamatan, kota, alamat_lengkap, keterangan)","'$desa','$kecamatan','$kota','$alamat_lengkap','$keterangan'");
+		$sukses=$ff->upload("foto");
+		$ff->alert($sukses);
+		$q=$odb->ins("berita(judul, text, date, gambar)","'$judul','$text','$date','$sukses'");
 		$ff->alert("data berhasil disimpan !!");
 		
 		$ff->redirect("admin.php");
@@ -19,7 +22,7 @@ if (!empty($act)) {
 		case 'up':
 		$post=$odb->sant(INPUT_POST);
 		extract($post);
-		$q=$odb->up("tb_tempat","desa='$desa',kecamatan='$kecamatan',kota='$kota',alamat_lengkap='$alamat_lengkap',keterangan='$keterangan' where id_tempat='$id'");
+		$q=$odb->up("berita","judul='$judul',text='$text',gambar='$sukses'where id='$id'");
 		$ff->alert("data berhasil disimpan !!");
 
 		$ff->redirect("admin.php");
@@ -28,7 +31,7 @@ if (!empty($act)) {
 		$id=$ff->get("id");
 		if (!empty($id)) {
 
-			$q=$odb->del("tb_tempat where id_tempat='$id'");
+			$q=$odb->del("berita where id='$id'");
 			$ff->alert("data berhasil dihapus !!");
 			$ff->redirect("admin.php");
 		}
@@ -36,7 +39,7 @@ if (!empty($act)) {
 		break;
 		default:
 		$ff->alert("tidak ada perubahan !!");
-		$ff->redirect("admin.php");
+		//$ff->redirect("admin.php");
 		break;
 	}
 }

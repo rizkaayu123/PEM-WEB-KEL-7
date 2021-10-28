@@ -4,8 +4,8 @@ include_once '../lib/class-ff.php';
 ?>
 <section class="content-header">
   <h1>
-   Data Berita
-   <small>Data Seluruh Berita</small>
+   Tambah Data Yayasan
+   <small>Data Seluruh Yayasan</small>
  </h1>
 
 </section>
@@ -15,7 +15,7 @@ include_once '../lib/class-ff.php';
 		<div class="col-xs-12">
 			<div class="box">
         <div class="box-header">
-          <h3 class="box-title pull-right"><button class="btn btn-success" onclick="ofrmuser();"><i class="fa fa-user-plus"></i> Tambah Data Berita</button></h3>
+          <h3 class="box-title pull-right"><button class="btn btn-success" onclick="ofrmuser();"><i class="fa fa-user-plus"></i> Tambah Data Yayasan</button></h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -23,10 +23,12 @@ include_once '../lib/class-ff.php';
             <thead>
               <tr>
                 <th>Menu</th>
-                <th>Judul</th>
+                <th>Nama Yayasan</th>
                 <th>Deskripsi</th>
-                <th>Tanggal</th>
-                <th>Gambar</th>
+                <th>Alamat</th>
+                <th>No Telepon</th>
+                <th>Email</th>
+                <th>Kebutuhan</th>
               </tr>
             </thead>
             <tbody>
@@ -40,14 +42,16 @@ include_once '../lib/class-ff.php';
                 <tr>
                     <td>
                     <div class="btn-group">
-                        <a href="edit-berita.php" class="btn btn-primary edit-berita" data-id="<?=$r['id']?>"><i class="fa fa-edit fa-md"></i></a>
-                        <a href="sv-berita.php?act=del&id=<?=$r['id']?>" class="btn btn-danger" data-id="<?=$r['id']?>"><i class="fa fa-trash fa-md"></i></a>
+                        <a href="edit-yayasan.php" class="btn btn-primary edit-yayasan" data-id="<?=$r['id']?>"><i class="fa fa-edit fa-md"></i></a>
+                        <a href="sv-yayasan.php?act=del&id=<?=$r['id_yayasan']?>" class="btn btn-danger" data-id="<?=$r['id']?>"><i class="fa fa-trash fa-md"></i></a>
                     </div>
                     </td>
-                    <td><?=$r['judul']?></td>
+                    <td><?=$r['nama_yayasan']?></td>
                     <td><?=$r['text']?></td>
-                    <td><?=$r['date']?></td>
-                    <td><img width='80' src='../../image'<?=($r['gambar'])?></td>
+                    <td><?=$r['alamat']?></td>
+                    <td><?=$r['notlp']?></td>
+                    <td><?=$r['email']?></td>
+                    <td><?=$r['Kebutuhan']?></td>
                 </tr>
                 <?php 
                 }
@@ -117,14 +121,14 @@ include_once '../lib/class-ff.php';
   //   $("#modal-del-kelompok").modal("show");
   // }
   $(document).ready(function(){
-    $(".edit-berita").click(function(){
+    $(".edit-yayasan").click(function(){
 
-      $("#modal-edit-berita").modal("show");
+      $("#modal-edit-yayasan").modal("show");
       var id=$(this).attr("data-id");
       // alert(id);
       $.ajax({
         type:"post",
-        url:"edit-berita.php?id="+id,
+        url:"edit-yayasan.php?id="+id,
         success:function(data){
           $(".fetched-data").html(data);
         }
@@ -133,4 +137,4 @@ include_once '../lib/class-ff.php';
   })
 </script>
 
-<?php include_once 'frm-berita.php'; ?>
+<?php include_once 'frm-yayasan.php'; ?>

@@ -36,7 +36,7 @@
 			}
 			elseif ($fe===0&&$ft>0) {
 				$fname="VE_".date("Ymdhis").".jpg";
-				$move=move_uploaded_file($_FILES[$foto]['tmp_name'], "../../image/".$fname);
+				$move=move_uploaded_file($_FILES[$foto]['tmp_name'], "../images/".$fname);
 			}else
 			{
 				$fname="";

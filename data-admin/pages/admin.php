@@ -225,7 +225,7 @@ desired effect
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="../../indexuser.php" class="btn btn-default btn-flat">Website</a>
                 </div>
                 <div class="pull-right">
                   <a href="sign-out.php" class="btn btn-default btn-flat bg-purple">Sign out</a>
@@ -284,7 +284,7 @@ desired effect
           <ul class="treeview-menu">
             <li><a class="btn-nav" data-url="data-user.php" href="#">Data User</a></li>
             <li><a class="btn-nav" data-url="data-berita.php" href="#">Data Berita</a></li>
-            <li><a class= "btn-nav" data-url="data-kelompok.php" href="#">Data Donatur</a></li>
+            <li><a class= "btn-nav" data-url="data-yayasan.php" href="#">Data Yayasan</a></li>
             <li><a class="btn-nav" data-url="data-tempat.php" href="#">Data Campaing</a></li>
           </ul>
         </li>
