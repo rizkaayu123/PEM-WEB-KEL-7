@@ -35,15 +35,15 @@ include_once '../lib/class-ff.php';
         
                 <?php 
                 $n=0;
-                $q=$odb->select("berita");
+                $q=$odb->select("yayasan");
                 while ($r=$q->fetch()) {
                 $n++;
                 ?>
                 <tr>
                     <td>
-                    <div class="btn-group">
-                        <a href="edit-yayasan.php" class="btn btn-primary edit-yayasan" data-id="<?=$r['id']?>"><i class="fa fa-edit fa-md"></i></a>
-                        <a href="sv-yayasan.php?act=del&id=<?=$r['id_yayasan']?>" class="btn btn-danger" data-id="<?=$r['id']?>"><i class="fa fa-trash fa-md"></i></a>
+                    <div class="btn-group">   
+                    <a href="#" class="btn btn-warning edit-user" data-id="<?=$r['id_yas']?>"><i class="fa fa-edit fa-md"></i></a>
+                    <a href="sv-user.php?act=del&id=<?=$r['id_yas']?>" class="btn btn-danger" data-id="<?=$r['id_yas']?>"><i class="fa fa-trash fa-md"></i></a>
                     </div>
                     </td>
                     <td><?=$r['nama_yayasan']?></td>
@@ -51,7 +51,8 @@ include_once '../lib/class-ff.php';
                     <td><?=$r['alamat']?></td>
                     <td><?=$r['notlp']?></td>
                     <td><?=$r['email']?></td>
-                    <td><?=$r['Kebutuhan']?></td>
+                    <td><?=$r['kebutuhan']?></td>
+      
                 </tr>
                 <?php 
                 }

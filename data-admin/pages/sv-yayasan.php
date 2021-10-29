@@ -2,6 +2,7 @@
 session_start();
 include_once '../lib/class-db.php';
 include_once '../lib/class-ff.php';
+include_once '../lib/class-fungsi.php';
 
 $act=$ff->get("act");
 if (!empty($act)) {
@@ -11,55 +12,16 @@ if (!empty($act)) {
 				// if (empty($as)) {
 		$post=$odb->sant(INPUT_POST);
 		extract($post);
-		if (!empty($pass1)&&!empty($pass1)) {
-			if ($pass1==$pass2) {
-				$password=$pass1;
-				$q=$odb->ins("yayasan(nama_yayasan, text, alamat, notlp, email, kebutuhan)","'$nama_yayasan','$text','$alamat','$notlp','$email', '$kebutuhan'");
-				$ff->alert("data berhasil disimpan !!");
-			}
-		}else{
-			$ff->alert("gagal menyimpan !");
-		}
-
-				// }else{
-				// 	$post=$odb->sant(INPUT_POST);
-				// 	extract($post);
-				// 	if (!empty($pass1)&&!empty($pass1)) {
-				// 		if ($pass1==$pass2) {
-				// 			$password=md5($pass1);
-				// 			$q=$odb->ins("tb_user(nama_user, username, password, id_level)","'$nama_user','$username','$password',5");
-				// 			$ff->alert("data berhasil disimpan !!");
-				// 			$id_user=$odb->last();
-				// 			if (empty($_SESSION['user'])) {
-				// 				$_SESSION['user']=$id_user;
-				// 				$_SESSION['level']=5;
-				// 			}
-				// 			$ff->redirect("../index.php");
-				// 		}
-				// 	}else{
-				// 		$ff->alert("gagal menyimpan !");
-				// 	}
-				// }
-
+		$q=$odb->ins("yayasan(nama_yayasan, text, alamat, notlp, email, kebutuhan)","'$nama_yayasan','$text','$alamat','$notlpn','$email','$kebutuhan'");
+		$ff->alert("data berhasil disimpan !!");
+		
 		$ff->redirect("admin.php");
 		break;
 		case 'up':
 		$post=$odb->sant(INPUT_POST);
 		extract($post);
-		if (!empty($id)) {
-			if (!empty($pass1)&&!empty($pass2)) {
-				if ($pass1==$pass2) {
-					$password=$pass1;
-					// $ff->alert($id);
-					// $ff->alert($nama_belakang);
-					$q=$odb->up("yayasan","nama_yayasan='$nama_yayasan',text='$text',alamat='$alamat',notlp='$notlp',email='$email',kebutuhan='$kebutuhan' where id_yas='$id'");
-					$ff->alert("data berhasil disimpan !!");
-				}
-			}else{
-				$ff->alert("gagal menyimpan !");
-			}
-		}
-
+		$q=$odb->up("berita","judul='$judul',text='$text',gambar='$sukses'where id='$id'");
+		$ff->alert("data berhasil disimpan !!");
 
 		$ff->redirect("admin.php");
 		break;
@@ -67,7 +29,7 @@ if (!empty($act)) {
 		$id=$ff->get("id");
 		if (!empty($id)) {
 
-			$q=$odb->del("yayasan where id_yayasan='$id'");
+			$q=$odb->del("berita where id='$id'");
 			$ff->alert("data berhasil dihapus !!");
 			$ff->redirect("admin.php");
 		}
@@ -75,7 +37,7 @@ if (!empty($act)) {
 		break;
 		default:
 		$ff->alert("tidak ada perubahan !!");
-		$ff->redirect("admin.php");
+		//$ff->redirect("admin.php");
 		break;
 	}
 }

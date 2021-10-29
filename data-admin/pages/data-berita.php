@@ -39,15 +39,15 @@ include_once '../lib/class-ff.php';
                 ?>
                 <tr>
                     <td>
-                    <div class="btn-group">
-                        <a href="edit-berita.php" class="btn btn-primary edit-berita" data-id="<?=$r['id']?>"><i class="fa fa-edit fa-md"></i></a>
-                        <a href="sv-berita.php?act=del&id=<?=$r['id']?>" class="btn btn-danger" data-id="<?=$r['id']?>"><i class="fa fa-trash fa-md"></i></a>
+                    <div class="btn-group">   
+                    <a href="#" class="btn btn-warning edit-user" data-id="<?=$r['id']?>"><i class="fa fa-edit fa-md"></i></a>
+                    <a href="sv-berita.php?act=del&id=<?=$r['id']?>" class="btn btn-danger" data-id="<?=$r['id']?>"><i class="fa fa-trash fa-md"></i></a>
                     </div>
                     </td>
                     <td><?=$r['judul']?></td>
                     <td><?=$r['text']?></td>
                     <td><?=$r['date']?></td>
-                    <td><img width='80' src='../../image'<?=($r['gambar'])?></td>
+                    <td><img width='80' src='../image'<?=($r['gambar'])?></td>
                 </tr>
                 <?php 
                 }

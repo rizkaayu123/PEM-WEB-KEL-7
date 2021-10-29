@@ -15,7 +15,7 @@
 
 			</div>
 			<div class="modal-body bg-light">
-				<form action="sv-berita.php" method="post" enctype="multipart/form-data">
+				<form action="sv-berita.php?act=ins" method="post" enctype="multipart/form-data">
 					
 					<div class="form-group">
 						<label>Judul Berita :</label>

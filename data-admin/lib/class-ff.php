@@ -29,14 +29,14 @@
 			$fs=$_FILES[$foto]['size'];
 			$ft=$_FILES[$foto]['type'];
 			$fe=$_FILES[$foto]['error'];
-			$tipe = array('images/jpeg','images/jpg','images/png');
+			$tipe = array('image/jpeg','image/jpg','image/png');
 			if (!in_array($ft, $tipe)) {
 				echo("<script>Tipe foto tidak valid !! Tipe Harus berupa PNG,JPG</script>");
 				$fname="";
 			}
 			elseif ($fe===0&&$ft>0) {
 				$fname="VE_".date("Ymdhis").".jpg";
-				$move=move_uploaded_file($_FILES[$foto]['tmp_name'], "../../image/".$fname);
+				$move=move_uploaded_file($_FILES[$foto]['tmp_name'], "../image/".$fname);
 			}else
 			{
 				$fname="";
