@@ -47,7 +47,7 @@ include_once '../lib/class-ff.php';
                     <td><?=$r['judul']?></td>
                     <td><?=$r['text']?></td>
                     <td><?=$r['date']?></td>
-                    <td><img width='80' src='../image'<?=($r['gambar'])?></td>
+                    <td><img width='80' src="../image/<?=($r['gambar'])?>"></td>
                 </tr>
                 <?php 
                 }
