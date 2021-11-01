@@ -28,7 +28,7 @@ $(function(){
 				},
 				error:function(){
 
-					$("#konten").html("gak ketemu bosque!");
+					$("#konten").html("");
 				}
 			});
 		});

@@ -2,7 +2,6 @@
 session_start();
 include_once '../lib/class-db.php';
 include_once '../lib/class-ff.php';
-include_once '../lib/class-fungsi.php';
 
 $act=$ff->get("act");
 if (!empty($act)) {
@@ -12,9 +11,7 @@ if (!empty($act)) {
 				// if (empty($as)) {
 		$post=$odb->sant(INPUT_POST);
 		extract($post);
-		$sukses=$ff->upload("foto");
-		$ff->alert($sukses);
-		$q=$odb->ins("berita(judul, text, date, gambar)","'$judul','$text','$date','$sukses'");
+		$q=$odb->ins("yayasan(nama_yayasan, text, alamat, notlp, email, kebutuhan)","'$nama_yayasan','$text','$alamat','$notlpn','$email','$kebutuhan'");
 		$ff->alert("data berhasil disimpan !!");
 		
 		$ff->redirect("admin.php");
