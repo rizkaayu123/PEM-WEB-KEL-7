@@ -285,7 +285,7 @@ desired effect
             <li><a class="btn-nav" data-url="data-user.php" href="#">Data User</a></li>
             <li><a class="btn-nav" data-url="data-berita.php" href="#">Data Berita</a></li>
             <li><a class= "btn-nav" data-url="data-yayasan.php" href="#">Data Yayasan</a></li>
-            <li><a class="btn-nav" data-url="data-tempat.php" href="#">Data Campaing</a></li>
+            <li><a class="btn-nav" data-url="data-campaign.php" href="#">Data Campaing</a></li>
           </ul>
         </li>
       </ul>

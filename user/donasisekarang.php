@@ -67,7 +67,7 @@
     <form action="add-donasisekarang.php?act=ins" method="post" name="form1" enctype="multipart/form-data" >
     
         <div class="form-group">
-            <label>Nama Donatur:</label>
+            <label>Nama Lengkap:</label>
             <input type="text" name="nama_donatur" class="form-control" placeholder="Masukan Nama Donatur" required />
 
         </div>
@@ -108,12 +108,17 @@
             <label>Jumlah Donasi:</label>
             <input type="text" name="jumlahdonasi" class="form-control" placeholder="Masukan Jumlah Donasi" required />
 
+<br>
+
         </div>
         <div class="form-group float-right">
-          <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
+          <button type="submit" name="Submit" class="btn btn-success">Donasi</button>
+          <button type="reset" name="reset" class="btn btn-danger">Reset</button>
         </div>
 </form>
 </div>
+
+<br>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-warning text-muted">
