@@ -43,7 +43,7 @@
             Ruang Donatur
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#Daftar">Daftar Donatur</a></li>
+            <li><a class="dropdown-item" href="user/data_donatur.php">Daftar Donatur</a></li>
             <li><a class="dropdown-item" href="#Tracking">Tracking Donasi</a></li>
           </ul>
         </li>
@@ -92,8 +92,10 @@
   </button>
 </div>
 
+<br>
   <div class="container">
     <h2 align="center">Berita</h2>
+    <br>
     <div class="row" id="load_data">
       <?php
         include 'config.php';
@@ -134,8 +136,38 @@
 
 </div>
 
+<br>
+
+  <div class="container">
+    <h2 align="center">Potret Kegiatan</h2>
+    <br>
+    <div class="row" id="load_data">
+      <?php
+        include 'config.php';
+        $query = "SELECT * FROM potret ORDER BY id_potret ASC";
+        $dewan1 = $mysqli->prepare($query);
+        $dewan1->execute();
+        $res1 = $dewan1->get_result();
+        while ($row = $res1->fetch_assoc()) {
+          $id = $row["id_potret"];
+          $potret = $row["potret"];
+          $caption = $row["caption"];
+      ?>
+        <div class="col-sm-3 mb-3">
+          <div class="card">
+            <img width='80' src="data-admin/image/<?php echo $potret; ?>" class="card-img-top" alt="potret">
+            <div class="card-body">
+              <p class="card-text"><?php echo $caption; ?></p>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+ 
+    </div>
+</div>
 
 
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
