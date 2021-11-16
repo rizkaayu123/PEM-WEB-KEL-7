@@ -8,7 +8,7 @@
 							<h3 class="modal-title">Add campaign</h3>
 						</td>
 						<td>
-							<a href="#" class="pull-right" style="color: white" onclick="tfrmcampaign();"><i class="fa fa-remove fa-lg"></i></a>
+							<a href="#" class="pull-right" style="color: white" onclick="tfrmuser();"><i class="fa fa-remove fa-lg"></i></a>
 						</td>
 					</tr>
 				</table>
@@ -25,17 +25,19 @@
 						<label>Deskripsi:</label>
 						<textarea type="text" name="deskripsi" class="form-control" rows="5" placeholder="Masukan Deskripsi Campaign" required></textarea>
 
+					<div class="form-group">
+						<label>Kategori Donasi:</label>
+						<input type="text" name="kategori_donasi" class="form-control" placeholder="Masukan Kategori Donasi" required/>
+
+					</div>
+
 					</div>
 					<div class="form-group">
 						<label>Nama Penerima:</label>
 						<input type="text" name="nama_penerima" class="form-control" placeholder="Masukan Nama Penerima" required/>
 
 					</div>	
-					<div class="form-group">
-						<label>Jumlah Donatur:</label>
-						<input type="text" name="jumlahdonatur" class="form-control" placeholder="Masukan Jumlah Donatur" required/>
-
-					</div>	
+						
 					<div class="form-group">
 						<label>Kebutuhan Dana:</label>
 						<input type="text" name="kebutuhan_dana" class="form-control" placeholder="Masukan Dana yang Dibutuhkan" required/>
@@ -46,14 +48,10 @@
 						<input type="text" name="terdanai" class="form-control" placeholder="Apakah Terdanai atau Tidak" required/>
 
 					</div>
-					<div class="form-group">
-						<label>Kekurangan:</label>
-						<input type="text" name="kekurangan" class="form-control" placeholder="Masukkan Kekurangan Dana yang Dibutuhkan" required/>
-
-					</div>		
+		
 					<div class="form-group">
 						<label>Gambar:</label>
-						<input type="file" name="gambar" required/>
+						<input type="file" name="foto" required/>
 						<p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg | .gif</p>
 					</div>
 						

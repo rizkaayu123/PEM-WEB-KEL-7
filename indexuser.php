@@ -33,7 +33,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Campaign">Campaign</a>
+          <a class="nav-link" href="user/camping.php">Campaign</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#Transparasi">Transparasi</a>
@@ -133,10 +133,6 @@
 
 
 </div>
-
-
-
-
 
 
 

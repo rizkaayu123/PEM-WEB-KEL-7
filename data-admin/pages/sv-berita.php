@@ -2,7 +2,6 @@
 session_start();
 include_once '../lib/class-db.php';
 include_once '../lib/class-ff.php';
-include_once '../lib/class-fungsi.php';
 
 $act=$ff->get("act");
 if (!empty($act)) {

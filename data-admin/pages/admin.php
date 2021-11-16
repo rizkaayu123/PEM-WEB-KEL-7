@@ -273,7 +273,7 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="active"><a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="active"><a href="#"><i class="fa fa-file-text"></i> <span>Laporan</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-reorder"></i> <span>Data Sistem</span>

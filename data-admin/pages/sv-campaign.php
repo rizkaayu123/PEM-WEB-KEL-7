@@ -13,7 +13,7 @@ if (!empty($act)) {
 		extract($post);
 		$sukses=$ff->upload("foto");
 		$ff->alert($sukses);
-		$q=$odb->ins("campaing(judul, deskripsi, nama_penerima, jumlahdonatur, kebutuhan_dana, terdanai, kekurangan, gambar)","'$judul','$deskripsi','$nama_penerima', '$jumlahdonatur', '$kebutuhan_dana', '$terdanai', '$kekurangan', '$sukses'");
+		$q=$odb->ins("campaing(judul, deskripsi, kategori_donasi, nama_penerima, kebutuhan_dana, terdanai, foto)","'$judul','$deskripsi','$kategori_donasi','$nama_penerima','$kebutuhan_dana', '$terdanai', '$sukses'");
 		$ff->alert("data berhasil disimpan !!");
 		
 		$ff->redirect("admin.php");
@@ -21,7 +21,7 @@ if (!empty($act)) {
 		case 'up':
 		$post=$odb->sant(INPUT_POST);
 		extract($post);
-		$q=$odb->up("campaing","judul='$judul',deskripsi='$deskripsi', nama_penerima='$nama_penerima', jumlahdonatur='$jumlahdonatur', kebutuhan_dana='$kebutuhan_dana', kekurangan='$kekurangan', gambar='$sukses'where id='$id'");
+		$q=$odb->up("campaing","judul='$judul',deskripsi='$deskripsi',kategori_donasi='$kategori_donasi' ,nama_penerima='$nama_penerima' ,kebutuhan_dana='$kebutuhan_dana',terdanai='$terdanai' ,gambar='$sukses'where id='$id_cam'");
 		$ff->alert("data berhasil disimpan !!");
 
 		$ff->redirect("admin.php");
@@ -30,7 +30,7 @@ if (!empty($act)) {
 		$id=$ff->get("id");
 		if (!empty($id)) {
 
-			$q=$odb->del("campaing where id='$id'");
+			$q=$odb->del("campaing where id_cam='$id'");
 			$ff->alert("data berhasil dihapus !!");
 			$ff->redirect("admin.php");
 		}

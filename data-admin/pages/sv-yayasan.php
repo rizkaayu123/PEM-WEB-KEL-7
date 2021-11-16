@@ -13,6 +13,10 @@ if (!empty($act)) {
 		extract($post);
 		$q=$odb->ins("yayasan(nama_yayasan, text, alamat, notlp, email, kebutuhan)","'$nama_yayasan','$text','$alamat','$notlpn','$email','$kebutuhan'");
 		$ff->alert("data berhasil disimpan !!");
+
+		$post=$odb->sant(INPUT_POST);
+		extract($post);
+		$q=$odb->ins("campaing(judul, deskripsi, kategori_donasi, nama_penerima, kebutuhan_dana, terdanai)","'$judul','$deskripsi','$kategori_donasi','$nama_penerima','$kebutuhan_dana', '$terdanai'");
 		
 		$ff->redirect("admin.php");
 		break;

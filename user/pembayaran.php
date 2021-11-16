@@ -1,10 +1,4 @@
-<?php 
-include_once 'lib/class-db.php';
-include_once 'lib/class-ff.php';
-$id=$ff->get("id");
-$q=$odb->select("campaing where id_cam='$id'");
-$r=$q->fetch();
-?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -54,7 +48,7 @@ $r=$q->fetch();
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Donasi">Donasi Sekarang</a>
+          <a class="nav-link" href="user/donasisekarang.php">Donasi Sekarang</a>
         </li>
 
         <li class="navbar nav-item">
@@ -65,72 +59,54 @@ $r=$q->fetch();
     </div>
   </div>
 </nav>
-
-<br><br><br><br><br><br>
-
-  <section class="container-fluid mb-4">
-            <!-- justify-content-center untuk mengatur posisi form agar berada di tengah-tengah -->
-            <section class="row justify-content-center">
-            <section class="col-12 col-sm-6 col-md-4">
-            <form action="add-donasisekarang.php?act=ins" method="post" name="form1" enctype="multipart/form-data" >
-            <input type="hidden" name="id_donasi" value="<?php echo $r['id_cam']; ?>">
-             <div class="form-group">
-                <h4 class="elip font-bold" style="margin-bottom: 30px"><b><?php echo $r['judul']; ?></b></h4>
-                    <label for="exampleInputEmail1">Donasi</label>
-                    <input type="text" name="jumlah_donasi" class="form-control" placeholder="Rp." id="maskMoney" required/>        
-                </div>
-                <br>
-                <div class="form-group">
-                    <label>Nama Donature:</label>
-                    <select name="namadonatur" class="form-control select2" required="" style="width: 100%;">
-                      <option value="">---Pilih Nama Anda---</option>
-                      <?php 
-                      $q=$odb->select("user");
-                      while ($r=$q->fetch()) {
-                        ?>
-                        
-                        <option value="<?=$r['id_log']?>"><?=$r['nama_lengkap']?></option>
-                        <?php
-                      }
-                      ?>
-                    </select>
-
-                </div>
-                <div class="form-group">
-                    <label>Alamat:</label>
-                    <textarea type="text" name="alamat" class="form-control" rows="3" placeholder="Masukan Alamat" required></textarea>
-
-                </div>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="text" name="email" class="form-control" placeholder="Masukan Email" required />
-
-                </div>
-                  
-                <div class="form-group">
-                    <label>Nomor Telepon:</label>
-                    <input type="text" name="notelpn" class="form-control" placeholder="Masukan No Telepon" required />
-
-                </div>
-                <div class="form-group">
-                    <label>Tanggal:</label>
-                    <input type="date" name="tanggal" class="form-control" placeholder="Masukan Tanggal" required />
-
-                </div>
-
-                <div class="form-group">
-                    <label>Pesan/Doa :</label>
-                    <input type="text" name="pesan_donasi" class="form-control" placeholder="Masukan pesan atau doa" required />
-                </div>
-
-                    <button type="submit" name="submit" class="btn btn-primary btn-block">Donasi</button>
-
-                </form>
-            </section>
-            </section>
-        </section>
-
 <br>
+
+
+
+<div class="container">
+    <h2 align="center">Camping</h2>
+    <div class="row" id="load_data">
+      <?php 
+        include_once 'lib/class-db.php';
+        include_once 'lib/class-ff.php';
+        $q=$odb->select("campaing");
+        while ($r=$q->fetch()) {
+          $id_cam = $r["id_cam"];
+          $foto = $r["foto"];
+          $nama_penerima = $r["nama_penerima"];
+          $kategori_donasi= $r["kategori_donasi"];
+          $kebutuhan_dana = $r["kebutuhan_dana"];
+          $terdanai = $r["terdanai"];
+          $judul = $r["judul"];
+          if (strlen($judul) > 60) {
+            $judul = substr($judul, 0, 60) . "...";
+          }
+          $deskripsi = $r["deskripsi"];
+          if (strlen($deskripsi) > 100) {
+            $deskripsi = substr($deskripsi, 0, 100) . "...";
+          }
+        ?>
+<div class="col-sm-3 mb-3">
+          <div class="card">
+          <div class="col-md-12 text-center mt-inner">
+          <h3 class="elip font-bold" style="margin-bottom: 30px"><?php echo $judul; ?></h3>
+          <img width='80' src="../data-admin/image/<?php echo $foto; ?>" class="card-img-top" alt="gambar">
+            <div class="card-body">
+              <p class="card-text" >Nama Penerima : <?php echo $nama_penerima; ?></p> 
+              <p class="card-text" >Kategori : <?php echo $kategori_donasi; ?></p> 
+              <p class="card-text" >Tercapai &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <b><?php echo "Rp.".number_format($terdanai); ?></b></p>
+              <p class="card-text" >Target   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <?php echo  "Rp.".number_format($kebutuhan_dana); ?></p>
+              <p class="card-text"><?php echo $deskripsi; ?></p>
+              <a href="#" class="btn btn-primary">Donasi Sekarang</a>
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+    </div>
+
+
+<br><br><br><br><br><br><br><br><br>
+
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-warning text-muted">

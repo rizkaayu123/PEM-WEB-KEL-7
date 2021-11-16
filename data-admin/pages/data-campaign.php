@@ -5,7 +5,7 @@ include_once '../lib/class-ff.php';
 <section class="content-header">
   <h1>
    Data Campaign
-   <small>Data Seluruh Campaign</small>
+   <small>>Data Seluruh Campaign</small>
  </h1>
 
 </section>
@@ -15,13 +15,14 @@ include_once '../lib/class-ff.php';
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title pull-right"><button class="btn btn-success" onclick="ofrmuser();"><i class="fa fa-user-plus"></i> Tambah Data Campaign</button></h3>
+          <h3 class="box-title pull-right"><button class="btn btn-success" onclick="ofrmuser();"><i class="fa fa-user-plus"></i> Tambah Data Campaing</button></h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
           <table id="data" class="table table-bordered table-striped table-hover">
             <thead>
               <tr>
+                 <tr>
                 <th>Menu</th>
                 <th>Judul Campaign</th>
                 <th>Deskripsi</th>
@@ -29,7 +30,6 @@ include_once '../lib/class-ff.php';
                 <th>Jumlah Donatur</th>
                 <th>Kebutuhan Dana</th>
                 <th>Terdanai</th>
-                <th>Kekurangan</th>
                 <th>Gambar</th>
               </tr>
             </thead>
@@ -44,17 +44,16 @@ include_once '../lib/class-ff.php';
                 <tr>
                     <td>
                     <div class="btn-group">   
-                    <a href="#" class="btn btn-warning edit-user" data-id="<?=$r['id']?>"><i class="fa fa-edit fa-md"></i></a>
-                    <a href="sv-campaign.php?act=del&id=<?=$r['id']?>" class="btn btn-danger" data-id="<?=$r['id']?>"><i class="fa fa-trash fa-md"></i></a>
+                    <a href="edit_campaign.php" class="btn btn-warning edit-user" data-id="<?=$r['id_cam']?>"><i class="fa fa-edit fa-md"></i></a>
+                    <a href="sv-campaign.php?act=del&id=<?=$r['id_cam']?>" class="btn btn-danger" data-id="<?=$r['id_cam']?>"><i class="fa fa-trash fa-md"></i></a>
                     </div>
                     </td>
                     <td><?=$r['judul']?></td>
                     <td><?=$r['deskripsi']?></td>
+                    <td><?=$r['kategori_donasi']?></td>
                     <td><?=$r['nama_penerima']?></td>
-                    <td><?=$r['jumlahdonatur']?></td>
-                    <td><?=$r['kebutuhan_dana']?></td>
-                    <td><?=$r['terdanai']?></td>
-                    <td><?=$r['kekurangan']?></td>
+                    <td><?="Rp.".number_format($r['kebutuhan_dana']); ?></td>
+                    <td><?="Rp.".number_format($r['terdanai']); ?></td>
                     <td><img width='80' src="../image/<?=($r['gambar'])?>"></td>
                 </tr>
                 <?php 
@@ -90,7 +89,7 @@ include_once '../lib/class-ff.php';
         <table style="border:none;width: 100%">
           <tr>
             <td>
-              <h3 class="modal-title">Edit berita</h3>
+              <h3 class="modal-title">Edit campaign</h3>
             </td>
             <td>
               <a href="#" class="pull-right" style="color: white" onclick="closeeditkelompok();"><i class="fa fa-remove fa-lg"></i></a>
@@ -132,7 +131,7 @@ include_once '../lib/class-ff.php';
       // alert(id);
       $.ajax({
         type:"post",
-        url:"edit-campaign.php?id="+id,
+        url:"edit-berita.php?id="+id,
         success:function(data){
           $(".fetched-data").html(data);
         }
