@@ -284,7 +284,6 @@ desired effect
           <ul class="treeview-menu">
             <li><a class="btn-nav" data-url="data-user.php" href="#">Data User</a></li>
             <li><a class="btn-nav" data-url="data-berita.php" href="#">Data Berita</a></li>
-            <li><a class= "btn-nav" data-url="data-yayasan.php" href="#">Data Yayasan</a></li>
             <li><a class="btn-nav" data-url="data-campaign.php" href="#">Data Campaing</a></li>
           </ul>
         </li>
@@ -327,7 +326,7 @@ desired effect
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="#">WETOGETHER</a>.</strong> Mari Berbagi Untuk Sesama.
   </footer>
 
 </div>
