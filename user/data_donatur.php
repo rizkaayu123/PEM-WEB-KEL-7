@@ -27,18 +27,11 @@ include_once 'lib/class-ff.php';
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href="#BERANDA" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-current="page" aria-expanded="false">
-            Beranda
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#Berita">Berita</a></li>
-            <li><a class="dropdown-item" href="#Video">Video</a></li>
-            <li><a class="dropdown-item" href="#Potret">Potret Kegiatan</a></li>
-          </ul>
+      <li class="nav-item">
+          <a class="nav-link" href="../indexuser.php">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="user/camping.php">Campaign</a>
+          <a class="nav-link" href="camping.php">Campaign</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#Transparasi">Transparasi</a>
@@ -48,12 +41,8 @@ include_once 'lib/class-ff.php';
             Ruang Donatur
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#Daftar">Daftar Donatur</a></li>
-            <li><a class="dropdown-item" href="#Tracking">Tracking Donasi</a></li>
+            <li><a class="dropdown-item" href="data_donature.php">Daftar Donatur</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="user/donasisekarang.php">Donasi Sekarang</a>
         </li>
 
         <li class="navbar nav-item">

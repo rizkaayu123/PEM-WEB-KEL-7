@@ -36,11 +36,8 @@
             Ruang Donatur
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#Daftar">Daftar Donatur</a></li>
+            <li><a class="dropdown-item" href="user/data_donature.php">Daftar Donatur</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="user/donasisekarang.php">Donasi Sekarang</a>
         </li>
 
         <li class="navbar nav-item">
