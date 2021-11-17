@@ -284,7 +284,12 @@ desired effect
           <ul class="treeview-menu">
             <li><a class="btn-nav" data-url="data-user.php" href="#">Data User</a></li>
             <li><a class="btn-nav" data-url="data-berita.php" href="#">Data Berita</a></li>
+<<<<<<< HEAD
             <li><a class="btn-nav" data-url="data-campaign.php" href="#">Data Campaing</a></li>
+=======
+            <li><a class= "btn-nav" data-url="data-potret.php" href="#">Data Potret</a></li>
+            <li><a class="btn-nav" data-url="data-campaign.php" href="#">Data Campaign</a></li>
+>>>>>>> d5d16ac469f336c54ae65647ee7d0e8b680f1641
           </ul>
         </li>
       </ul>
